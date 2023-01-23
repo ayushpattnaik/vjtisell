@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'chats_screen.dart';
+import 'postad_screen.dart';
+import 'account_screen.dart';
+import 'myads_screen.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -14,11 +17,11 @@ class Home extends StatelessWidget {
           bottomNavigationBar: menu(),
           body: TabBarView(
             children: [
-              Container(child: Icon(Icons.directions_car)),
-              Container(child: Icon(Icons.directions_transit)),
-              Container(child: Icon(Icons.directions_bike)),
-              Container(child: Icon(Icons.directions_bike)),
-              Container(child: Icon(Icons.directions_bike)),
+              screen1(),
+              chats_screen(),
+              postad_screen(),
+              myads_screen(),
+              account_screen(),
             ],
           ),
         ),
@@ -71,4 +74,7 @@ class Home extends StatelessWidget {
           ),
         );
   }
+}
+screen1() {
+    return Center(child: Text('Screen 1'),);
 }
