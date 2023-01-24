@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:vjtisell/screens/home_screen.dart';
 import 'package:vjtisell/database/database.dart';
+import 'package:vjtisell/screens/login_screen.dart';
+import 'package:vjtisell/screens/signup_screen.dart';
 
-
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MongoDatabase.connect();
   runApp(const MyApp());
@@ -11,17 +12,17 @@ void main() async{
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'vjtisell',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginPage(),
+        '/home': (context) => const Home(),
+        '/signup': (context) => const SignupPage(),
+      },
     );
   }
 }

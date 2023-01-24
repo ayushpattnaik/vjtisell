@@ -4,26 +4,25 @@ import 'postad_screen.dart';
 import 'account_screen.dart';
 import 'myads_screen.dart';
 
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 5,
-        child: Scaffold(
-          bottomNavigationBar: menu(),
-          body: TabBarView(
-            children: [
-              screen1(),
-              chats_screen(),
-              postad_screen(),
-              myads_screen(),
-              account_screen(),
-            ],
-          ),
+    return DefaultTabController(
+      length: 5,
+      child: Scaffold(
+        bottomNavigationBar: menu(),
+        body: TabBarView(
+          children: [
+            screen1(),
+            chats_screen(),
+            postad_screen(),
+            myads_screen(),
+            account_screen(),
+          ],
         ),
       ),
     );
