@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
-
-// sell -> categories -> sub categories (array)
-// title, desc, photo(select only), price
-// the moment we add, api call - put, yahin se chala jayega data to home 
+import 'package:image_picker/image_picker.dart';
 
 
-postad_screen() {
-  return Center(child: Text('Screen 3'),);
+image_selector_gallery() async {
+  var galleryFile =  await ImagePicker().pickImage(source: ImageSource.gallery);
+  print(galleryFile!.path);
+}
 
+postad_screen(){
+  Text("Tikoo");
+   return Center(
+    child: ButtonBar( 
+              children: [
+                ElevatedButton (
+                  child: const Text("Add Photo"),
+                  // textColor: Colors.white,
+                  // color: Colors.green,
+                  onPressed: (){
+                    image_selector_gallery();
+                  },
+                ),
+              ],
+            ),
+  );
 }
