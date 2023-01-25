@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-// import 'package:mongo_dart/mongo_dart.dart';
 
 
 image_selector_gallery() async {
@@ -13,7 +12,7 @@ postad_screen(){
     child: ButtonBar( 
               children: [
                 ElevatedButton (
-                  child: Text("Add Photo"),
+                  child: const Text("Add Photo"),
                   // textColor: Colors.white,
                   // color: Colors.green,
                   onPressed: (){
@@ -21,8 +20,6 @@ postad_screen(){
                   },
                 ),
               ],
-            )
-
+            ),
   );
-
 }

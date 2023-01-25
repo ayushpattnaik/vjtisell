@@ -62,7 +62,7 @@ class Home extends StatelessWidget {
                 text: "SELL",
               ),
               Tab(
-                icon: Icon(Icons.heart_broken, size: 30),
+                icon: Icon(Icons.favorite_border, size: 30),
                 text: "MY ADS",
               ),
               Tab(
