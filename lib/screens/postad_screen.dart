@@ -8,6 +8,7 @@ image_selector_gallery() async {
 }
 
 postad_screen(){
+  Text("Tikoo");
    return Center(
     child: ButtonBar( 
               children: [
