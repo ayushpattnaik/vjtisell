@@ -1,14 +1,8 @@
-// ignore_for_file: unnecessary_new
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-image_selector_gallery() async {
-  var galleryFile = await ImagePicker().pickImage(source: ImageSource.gallery);
-  print(galleryFile!.path);
-}
 
-postad_screen() {
+helper() {
   return Column(children: [
     // const Text("Tikoo"),
     ButtonBar(
@@ -37,38 +31,52 @@ postad_screen() {
         )
       ],
     ),
-    const Text("Product Name"),
-    const Text("Estimated Cost"),
-    const Text("Product Description"),
+    // const Text("Product Name"),
+    // const Text("Estimated Cost"),
+    // const Text("Product Description"),
     // runApp(MyApp())
   ]);
 }
 
-class MyApp extends StatelessWidget {  
+image_selector_gallery() async {
+  var galleryFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+  print(galleryFile!.path);
+}
+
+class postad_screen extends StatelessWidget {  
   @override  
   Widget build(BuildContext context) {  
-    final appTitle = 'Flutter Form Demo';  
+    final appTitle = 'Post Ad';
     return MaterialApp(  
-      title: appTitle,  
+      // title: appTitle,  
       home: Scaffold(  
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(  
           title: Text(appTitle),  
         ),  
-        body: MyCustomForm(),  
+        body: 
+        SingleChildScrollView(
+          child: Column(
+            children:[
+              helper(),
+              add_product_form(), 
+            ]
+          ) 
+        )
       ),  
     );  
   }  
 }  
 
 
-class MyCustomForm extends StatefulWidget {  
+class add_product_form extends StatefulWidget {  
   @override  
-  MyCustomFormState createState() {  
-    return MyCustomFormState();  
+  add_product_formState createState() {  
+    return add_product_formState();  
   }  
 }  
 // Create a corresponding State class, which holds data related to the form.  
-class MyCustomFormState extends State<MyCustomForm> {  
+class add_product_formState extends State<add_product_form> {  
   // Create a global key that uniquely identifies the Form widget  
   // and allows validation of the form.  
   final _formKey = GlobalKey<FormState>();  
@@ -84,47 +92,48 @@ class MyCustomFormState extends State<MyCustomForm> {
           TextFormField(  
             decoration: const InputDecoration(  
               icon: Icon(Icons.person),  
-              hintText: 'Enter your full name',  
-              labelText: 'Name',  
+              // hintText: 'Product Name',  
+              labelText: 'Product Name',  
             ),  
             validator: (value) {  
               if (value!.isEmpty) {  
-                return 'Please enter some text';  
+                return 'Please enter name of the product';  
               }  
               return null;  
             },  
           ),  
           TextFormField(  
             decoration: const InputDecoration(  
-              icon: Icon(Icons.phone),  
-              hintText: 'Enter a phone number',  
-              labelText: 'Phone',  
+              icon: Icon(Icons.attach_money),  
+              // hintText: 'Cost',  
+              labelText: 'Cost',  
             ),  
             validator: (value) {  
               if (value!.isEmpty) {  
-                return 'Please enter valid phone number';  
+                return 'Please enter estimated value';  
               }  
               return null;  
             },  
           ),  
           TextFormField(  
             decoration: const InputDecoration(  
-            icon: Icon(Icons.calendar_today),  
-            hintText: 'Enter your date of birth',  
-            labelText: 'Dob',  
+            icon: Icon(Icons.list),  
+            // hintText: 'Description',  
+            labelText: 'Description',  
             ),  
             validator: (value) {  
               if (value!.isEmpty) {  
-                return 'Please enter valid date';  
+                return 'Please enter description';  
               }  
               return null;  
             },  
            ),  
-          new Container(  
+          Container(  
               padding: const EdgeInsets.only(left: 150.0, top: 40.0),  
-              child: new ElevatedButton(  
+              child: ElevatedButton(  
                 child: const Text('Submit'),  
-                onPressed: () {  
+                onPressed: () {
+                  print("Tikoo");
                   // It returns true if the form is valid, otherwise returns false  
                   // if (_formKey.currentState!.validate()) {  
                   //   // If the form is valid, display a Snackbar.  
