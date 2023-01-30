@@ -46,14 +46,14 @@ image_selector_gallery() async {
 class postad_screen extends StatelessWidget {  
   @override  
   Widget build(BuildContext context) {  
-    final appTitle = 'Post Ad';
+    //final appTitle = 'Post Ad';
     return MaterialApp(  
       // title: appTitle,  
       home: Scaffold(  
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(  
-          title: Text(appTitle),  
-        ),  
+        // appBar: AppBar(  
+        //   title: Text(appTitle),  
+        // ),  
         body: 
         SingleChildScrollView(
           child: Column(
