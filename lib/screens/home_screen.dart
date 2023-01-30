@@ -33,8 +33,8 @@ class Home extends StatelessWidget {
     //     elevation: 10,
     //     child:
      Container(
-          padding: const EdgeInsets.all(15.0),
-          margin: const EdgeInsets.only(bottom: 20.0),
+          padding: const EdgeInsets.all(5.0),
+          // margin: const EdgeInsets.only(top: 5.0, bottom: 5.0),
           color: Colors.white,
           child: const TabBar(
             labelStyle: TextStyle(fontSize: 9),
@@ -51,23 +51,23 @@ class Home extends StatelessWidget {
                   Icons.home_outlined,
                   size: 30,
                 ),
-                text: "HOME",
+                // text: "HOME",
               ),
               Tab(
                 icon: Icon(Icons.chat, size: 30),
-                text: "CHATS",
+                // text: "CHATS",
               ),
               Tab(
-                icon: Icon(Icons.photo_camera, size: 40, color: Colors.blue),
-                text: "SELL",
+                icon: Icon(Icons.photo_camera, size: 35, color: Colors.blue),
+                // text: "SELL",
               ),
               Tab(
-                icon: Icon(Icons.heart_broken, size: 30),
-                text: "MY ADS",
+                icon: Icon(Icons.favorite_border, size: 30),
+                // text: "MY ADS",
               ),
               Tab(
                 icon: Icon(Icons.person, size: 28),
-                text: "ACCOUNT",
+                // text: "ACCOUNT",
               ),
             ],
           ),
