@@ -58,7 +58,7 @@ class Home extends StatelessWidget {
                 text: "CHATS",
               ),
               Tab(
-                icon: Icon(Icons.photo_camera, size: 35, color: Colors.blue),
+                icon: Icon(Icons.photo_camera, size: 40, color: Colors.blue),
                 text: "SELL",
               ),
               Tab(
